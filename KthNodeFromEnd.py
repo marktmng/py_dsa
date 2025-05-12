@@ -25,17 +25,18 @@ class LinkedList:
   
  
   
-def find_kth_from_end(ll, k):       
-    #### WRITE FIND_KTH_FROM_END FUNCTION HERE ####
-    #                                             #
-    #    This is a SEPARATE FUNCTION that         #
-    #    is NOT a method within the               #
-    #    LinkedList class.                        #
-    #                                             #
-    #    <== INDENT ALL THE WAY TO THE LEFT.      #
-    #                                             #
-    ###############################################
-
+def find_kth_from_end(ll, k):
+    slow = fast = ll.head
+    for _ in range(k):
+        if fast is None:
+            return None
+        fast = fast.next
+        
+    while fast:
+        slow = slow.next
+        fast = fast.next
+        
+    return slow
 
 
 
