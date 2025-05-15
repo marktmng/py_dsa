@@ -35,7 +35,19 @@ class LinkedList:
     #                                     #
     #                                     #
     #######################################
-
+    def binary_to_decimal(self):
+        #initialize result value
+        decimal_value = 0
+        #pointer to traverse the list
+        current = self.head
+        
+        # traverse the linked list
+        while current:
+            # shift the current decimal value to the left (multiply by 2)
+            decimal_value = (decimal_value << 1) | current.value
+            # move to the next node
+            current = current.next
+        return decimal_value # return the final decimal value
 
 
 
